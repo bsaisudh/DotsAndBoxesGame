@@ -5,6 +5,10 @@ Created on Mon Apr 29 10:54:31 2019
 @author: balam
 """
 
+Number_of_Training_Games = 10000
+Number_of_Test_Games = 100
+
+
 from dotBoxEnv import dotsBoxesEnv
 from dotBoxEnv import display
 from dotBoxEnv import reward
@@ -25,7 +29,7 @@ agent1.islearning = True
 agent2.islearning = True
 dbe.disp.updateDisplay = False
 game = gameController(dbe, agent1, agent2)
-for gameNo in range(10000):
+for gameNo in range(Number_of_Training_Games):
     game.reset()
     game.play(qt, True)
     game.distributeTropy()
@@ -42,7 +46,7 @@ agent1.islearning = False
 agent2.islearning = False
 dbe.disp.updateDisplay = True
 game = gameController(dbe, agent1, agent2)
-for gameNo in range(100):
+for gameNo in range(Number_of_Test_Games):
     game.reset()
     game.play(qt, False)
     game.distributeTropy()
