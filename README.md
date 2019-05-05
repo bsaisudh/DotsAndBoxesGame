@@ -38,7 +38,7 @@ The project directory structure is as follows:
 
 ![2x2 Board](https://github.com/bsaisudh/DotsAndBoxesGame/blob/master/Results/2x2Grid.png)
 
-![2x2 play](https://github.com/bsaisudh/DotsAndBoxesGame/blob/master/Results/2x2Gif.png)
+![2x2 play](https://github.com/bsaisudh/DotsAndBoxesGame/blob/master/Results/2x2Gif.gif)
 
 ### Training and Testing Q agent on 2x2 board
 1. Open a terminal and goto src folder.
@@ -71,7 +71,7 @@ The results will be printed in the console
 
 ![3x3 Board](https://github.com/bsaisudh/DotsAndBoxesGame/blob/master/Results/3x3Grid.png)
 
-![3x3 play](https://github.com/bsaisudh/DotsAndBoxesGame/blob/master/Results/3x3Gif.png)
+![3x3 play](https://github.com/bsaisudh/DotsAndBoxesGame/blob/master/Results/3x3Gif.gif)
 
 ### Training and Testing Q agent on 3x3 board
 1. Open a terminal and goto src folder.
