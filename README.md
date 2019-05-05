@@ -30,7 +30,7 @@ The project directory structure is as follows:
 3. Results - contains videos of games being played
 
 ## Report
- [Report.pdf](https://github.com/bsaisudh/DotsAndBoxesGame/blob/master/Report/Report.pdf)
+[Report.pdf](https://github.com/bsaisudh/DotsAndBoxesGame/blob/master/Report/Report.pdf)
 
 ## Training and Play
 
@@ -58,7 +58,8 @@ The results will be printed in the console
 ### 2x2 Game Video
 
 [2x2 Game Video](https://github.com/bsaisudh/DotsAndBoxesGame/blob/master/Results/2x2.avi)
-[Other Videos](https://github.com/bsaisudh/DotsAndBoxesGame/blob/master/Results)
+
+[Additional Videos](https://github.com/bsaisudh/DotsAndBoxesGame/blob/master/Results)
 
 ### 3x3 board Q Agent
 1. Open a terminal and goto src folder.
@@ -83,7 +84,8 @@ The results will be printed in the console
 
 ### 3x3 Game Video
 [3x3 Game Video](https://github.com/bsaisudh/DotsAndBoxesGame/blob/master/Results/3x3.avi)
-[Other Videos](https://github.com/bsaisudh/DotsAndBoxesGame/blob/master/Results)
+
+[Additional Videos](https://github.com/bsaisudh/DotsAndBoxesGame/blob/master/Results)
 
 
 
