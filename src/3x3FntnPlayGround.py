@@ -5,7 +5,9 @@ Created on Mon Apr 29 10:54:31 2019
 @author: balam
 """
 
-Number_of_Training_Games = 100
+NoOfEpoh = 10
+NoOfSession = 10
+Number_of_Test_Games = 100
 Number_of_Test_Games = 100
 
 
@@ -39,8 +41,8 @@ dbe.disp.updateDisplay = False
 
 game = gameController(dbe, agent1, agent2)
 
-for session in range(500):
-    for gameNo in range(100):
+for session in range(NoOfEpoh):
+    for gameNo in range(NoOfSession):
         agent2.resetSession()
         game.reset()    
         game.play(qt, True)
