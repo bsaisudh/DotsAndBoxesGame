@@ -5,7 +5,8 @@ Created on Mon Apr 29 10:54:31 2019
 @author: balam
 """
 
-Number_of_Training_Games = 100
+NoOfEpoh = 10
+NoOfSession = 10
 Number_of_Test_Games = 100
 
 
@@ -39,8 +40,8 @@ dbe.disp.updateDisplay = False
 
 game = gameController(dbe, agent1, agent2)
 
-for session in range(Number_of_Training_Games):
-    for gameNo in range(100):
+for session in range(NoOfEpoh):
+    for gameNo in range(NoOfSession):
         agent2.resetSession()
         game.reset()    
         game.play(qt, True)
@@ -88,6 +89,7 @@ print("********************")
 print("a1:", agent1.wins, " a2:", agent2.wins, " draw:" , agent1.draws)
 print("a1 Mean Score : ", sum(scoreR)/len(scoreR),
       " a2 Mean Score : ", sum(scoreQ)/len(scoreQ))
+plt.figure(20)
 plt.plot(scoreQ,"r")
 plt.plot(scoreR,"b")
 plt.show()

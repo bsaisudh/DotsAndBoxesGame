@@ -19,8 +19,10 @@ git clone https://github.com/bsaisudh/DotsAndBoxesGame.git
 
 The project directory structure is as follows:
 1. src - Contains the source code Files
-  * 2x2 Play Ground.py - Train and play 2x2 game
-  * 3x3 Play Ground.py - Train and play 3x3 game
+  * 2x2 Play Ground.py - Train and play 2x2 game with Q agent
+  * 3x3 Play Ground.py - Train and play 3x3 game with Q agent
+  * 2x2FntnPlayGround.py - Train and play 2x2 game with Functional Agent
+  * 3x3FntnPlayGround.py - Train and play 3x3 game with Functional Agent
   * agent.py - class for random agent, queue agent and simple agent
   * dotboxenv.py - game environment class
   * gameController.py - game controller that calls the agents and proceeds the game
@@ -32,20 +34,7 @@ The project directory structure is as follows:
 
 ## Training and Play
 
-### 2x2 board
-1. Open a terminal and goto src folder.
-2. Run "3x3 Play Ground.py" file
-3. to change number of traing games and number of test games, change the below variables
-```
-Number_of_Training_Games = 10000
-Number_of_Test_Games = 100
-```
-The results will be rinted in the console
-
-[3x3 Game Video](https://github.com/bsaisudh/DotsAndBoxesGame/blob/master/Results/3x3.avi)
-
-
-### 2x2 board
+### 2x2 board Q Agent
 1. Open a terminal and goto src folder.
 2. Run "2x2 Play Ground.py" file
 3. to change number of traing games and number of test games, change the below variables
@@ -53,7 +42,48 @@ The results will be rinted in the console
 Number_of_Training_Games = 10000
 Number_of_Test_Games = 100
 ```
-The results will be rinted in the console
+The results will be printed in the console
+
+### 2x2 board Functional Agent
+1. Open a terminal and goto src folder.
+2. Run "2x2FntnPlayGround.py" file
+3. to change number of traing games and number of test games, change the below variables
+```
+NoOfEpoh = 10
+NoOfSession = 10
+Number_of_Test_Games = 100
+```
+The results will be printed in the console
+
+### 2x2 Game Video
+
+[2x2 Game Video](https://github.com/bsaisudh/DotsAndBoxesGame/blob/master/Results/2x2.avi)
+[Other Videos](https://github.com/bsaisudh/DotsAndBoxesGame/blob/master/Results)
+
+### 3x3 board Q Agent
+1. Open a terminal and goto src folder.
+2. Run "3x3 Play Ground.py" file
+3. to change number of traing games and number of test games, change the below variables
+```
+Number_of_Training_Games = 10000
+Number_of_Test_Games = 100
+```
+The results will be printed in the console
+
+### 3x3 board Functional Agent
+1. Open a terminal and goto src folder.
+2. Run "3x3FntnPlayGround.py" file
+3. to change number of traing games and number of test games, change the below variables
+```
+NoOfEpoh = 10
+NoOfSession = 10
+Number_of_Test_Games = 100
+```
+The results will be printed in the console
+
+### 3x3 Game Video
+[3x3 Game Video](https://github.com/bsaisudh/DotsAndBoxesGame/blob/master/Results/3x3.avi)
+[Other Videos](https://github.com/bsaisudh/DotsAndBoxesGame/blob/master/Results)
 
 
 

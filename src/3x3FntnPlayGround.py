@@ -19,6 +19,8 @@ from agent import randomAgent
 from agent import simpleAgent
 from agent import qFntnAgent
 from gameController import gameController
+from matplotlib import pyplot as plt
+
 
 dbe = dotsBoxesEnv(3)
 qt = qTable(dbe.allActions,dbe.numActions)
@@ -33,12 +35,12 @@ agent2.resetBatch()
 agent2.resetSession()
 agent2.islearning = True
 
-dbe.disp.updateDisplay = True
+dbe.disp.updateDisplay = False
 
 game = gameController(dbe, agent1, agent2)
 
 for session in range(500):
-    for gameNo in range(Number_of_Training_Games):
+    for gameNo in range(100):
         agent2.resetSession()
         game.reset()    
         game.play(qt, True)
@@ -47,9 +49,9 @@ for session in range(500):
     #    print("a1: ",agent1.score," a2: ", agent2.score, " draw: ", agent1.draws)
     #    dbe.disp.waitForUser()
         if gameNo%100 == 0:
-            dbe.disp.updateDisplay = True
+            dbe.disp.updateDisplay = False # True
             agent2.showProgress(False)
-            print("iterations:" , gameNo ,"a1:", agent1.wins, " a2:", agent2.wins, " draw:" , agent1.draws)
+            print("Session No : " , session, " iterations:" , gameNo ,"a1:", agent1.wins, " a2:", agent2.wins, " draw:" , agent1.draws)
         else:
             agent2.showProgress(False)
             dbe.disp.updateDisplay = False
@@ -74,11 +76,21 @@ agent1.islearning = False
 agent2.islearning = False
 dbe.disp.updateDisplay = True
 game = gameController(dbe, agent1, agent2)
+scoreQ = []
+scoreR = []
 for gameNo in range(Number_of_Test_Games):
     game.reset()
     game.play(qt, False)
     game.distributeTropy()
-print("*********","a1:", agent1.wins, " a2:", agent2.wins, " draw:" , agent1.draws)
-
+    scoreQ.append(agent2.score)
+    scoreR.append(agent1.score)
+print("********************")
+print("a1:", agent1.wins, " a2:", agent2.wins, " draw:" , agent1.draws)
+print("a1 Mean Score : ", sum(scoreR)/len(scoreR),
+      " a2 Mean Score : ", sum(scoreQ)/len(scoreQ))
+plt.figure(20)
+plt.plot(scoreQ,"r")
+plt.plot(scoreR,"b")
+plt.show()
 dbe.disp.releaseVideo()
 

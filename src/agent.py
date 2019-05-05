@@ -122,7 +122,7 @@ class qFntnAgent(agent):
             plt.subplot(1,2,1)
             plt.plot(list(zip(*self.log))[0], label='Mean rewards')
             plt.plot(list(zip(*self.log))[1], label='Reward thresholds')
-            plt.legend()
+#            plt.legend()
             plt.grid()
             plt.subplot(1,2,2)
             plt.hist(self.rewardBatch, range=reward_range);
