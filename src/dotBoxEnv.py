@@ -65,11 +65,12 @@ class dotsBoxesEnv:
         currState = self.currState | action
         error = (currState | action) == self.currState
         if not error:
-            self.prevState = self.currState
-            self.currState = currState
-            self.disp.addAction(action, color)
-            numFilledBoxes = self.getNumFilledBoxes(action,color)
-            self.disp.show()
+            pass
+        self.prevState = self.currState
+        self.currState = currState
+        self.disp.addAction(action, color)
+        numFilledBoxes = self.getNumFilledBoxes(action,color)
+        self.disp.show()
         return self.currState, numFilledBoxes, error
     
     def getallBoxes(self):
@@ -119,7 +120,8 @@ class display:
         self.yOffset = int(self.imgSize[1]*0.2)
         self.boxSize = abs((self.toImgCoord(0,0)[0] - self.toImgCoord(2,2)[0])*0.8)
         self.initGameBoard()
-        self.video = cv2.VideoWriter('video1.avi',cv2.VideoWriter_fourcc(*"XVID"), -1,self.imgSize)
+        self.video = cv2.VideoWriter('video.avi',cv2.VideoWriter_fourcc(*"XVID"), 30,self.imgSize)
+#        self.video = cv2.VideoWriter('outpy.avi',cv2.VideoWriter_fourcc('M','J','P','G'), 2, self.imgSize)
         self.updateDisplay = True
         self.show()
         
@@ -159,18 +161,18 @@ class display:
             pt1 = (int(pt[0]-self.boxSize/2), int(pt[1]-self.boxSize/2))
             pt2 = (int(pt[0]+self.boxSize/2), int(pt[1]+self.boxSize/2))
             self.gameBoard = cv2.rectangle(self.gameBoard, pt1, pt2, color, thickness=-1)
-            self.gameBoard = cv2.circle(self.gameBoard,
-                                            (pt[0],pt[1]),
-                                            int(0.03/self.gridSize),
-                                            [0,0,0],
-                                            thickness=-1)
+#            self.gameBoard = cv2.circle(self.gameBoard,
+#                                            (pt[0],pt[1]),
+#                                            int(0.03/self.gridSize),
+#                                            [0,0,0],
+#                                            thickness=-1)
         
         
     def show(self):
         if self.updateDisplay:
             cv2.imshow("DotAndBox", self.gameBoard)
             self.video.write(self.gameBoard)
-            cv2.waitKey(10)
+            cv2.waitKey(1)
 
     def waitForUser(self):
         while(1):
@@ -201,4 +203,7 @@ class reward:
         return self.boxComplete * numBoxes
     
     def winReward(self):
-         return self.winGame       
+         return self.winGame  
+    
+    def invalidMoveReward(self):
+        return -2

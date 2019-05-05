@@ -13,8 +13,8 @@ class qTable:
     def __init__(self,
                  _allActions,
                  _numActions,
-                 _learningFactor = 0.7,
-                 _discountFactor = 0.6,
+                 _learningFactor = 0.2,
+                 _discountFactor = 0.3,
                  _epsilon = 0.6):
         
         self.numActions = _numActions
